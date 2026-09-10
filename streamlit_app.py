@@ -311,32 +311,57 @@ def dish_visual(dish: dict, result, *, kiosk: bool) -> None:
     )
 
 
+def request_pid(person_id: str) -> None:
+    st.session_state.pid = person_id
+    st.session_state.pid_select = person_id
+
+
+def sync_pid_from_select() -> None:
+    st.session_state.pid = st.session_state.pid_select
+
+
+def sync_rid_from_select() -> None:
+    st.session_state.rid = st.session_state.rid_select
+
+
 def main() -> None:
     html(f"<style>{CSS}</style>")
     data = catalog()
     people = passports()
     restaurants = data["ristoranti"]
     dishes = data["piatti"]
+    person_ids = [p["id"] for p in people]
+    restaurant_ids = [r["id"] for r in restaurants]
 
     if "pid" not in st.session_state:
-        st.session_state.pid = people[0]["id"]
+        st.session_state.pid = person_ids[0]
     if "rid" not in st.session_state:
-        st.session_state.rid = restaurants[0]["id"]
+        st.session_state.rid = restaurant_ids[0]
+    if st.session_state.pid not in person_ids:
+        st.session_state.pid = person_ids[0]
+    if st.session_state.rid not in restaurant_ids:
+        st.session_state.rid = restaurant_ids[0]
 
     with st.sidebar:
         html("<p class='sp-kicker'>Incrocio</p><p class='sp-display' style='font-size:1.4rem;margin:0.3rem 0 0.8rem'>Passaporto</p>")
-        pid = st.selectbox(
+        st.selectbox(
             "Identità dimostrativa",
-            options=[p["id"] for p in people],
+            options=person_ids,
+            index=person_ids.index(st.session_state.pid),
             format_func=lambda i: next(p["etichetta"] for p in people if p["id"] == i),
-            key="pid",
+            key="pid_select",
+            on_change=sync_pid_from_select,
         )
-        rid = st.selectbox(
+        st.selectbox(
             "Locale",
-            options=[r["id"] for r in restaurants],
-            format_func=lambda i: f"{next(r['nome'] for r in restaurants if r['id'] == i)}",
-            key="rid",
+            options=restaurant_ids,
+            index=restaurant_ids.index(st.session_state.rid),
+            format_func=lambda i: next(r["nome"] for r in restaurants if r["id"] == i),
+            key="rid_select",
+            on_change=sync_rid_from_select,
         )
+        pid = st.session_state.pid
+        rid = st.session_state.rid
         record = next(p for p in people if p["id"] == pid)
         st.caption("Il QR non contiene allergeni né patologie.")
         show_image("pass-hero.jpg")
@@ -404,9 +429,13 @@ def main() -> None:
                     f"<p class='sp-muted' style='margin:0.4rem 0 0;color:inherit;opacity:0.8'>{labels}</p>"
                     f"</div>"
                 )
-                if st.button("Usa questa identità", key=f"use-{person['id']}"):
-                    st.session_state.pid = person["id"]
-                    st.rerun()
+                st.button(
+                    "Usa questa identità",
+                    key=f"use-{person['id']}",
+                    on_click=request_pid,
+                    args=(person["id"],),
+                    disabled=person["id"] == pid,
+                )
 
         html("<h2 style='margin:1.8rem 0 0.6rem'>Semaforo</h2>")
         traffic_legend()
