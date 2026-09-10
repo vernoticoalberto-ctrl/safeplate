@@ -105,6 +105,9 @@ class ProtocolTests(unittest.TestCase):
         md = to_markdown()
         self.assertIn("Manuale di utilizzo", md)
         self.assertIn("GDPR by design", md)
+        campi = {r["campo"]: r["valore"] for r in MANUALE["cloud"]["campi"]}
+        self.assertEqual(campi["Main file path"], "streamlit_app.py")
+        self.assertEqual(campi["Repository"], "vernoticoalberto-ctrl/safeplate")
 
 
 if __name__ == "__main__":

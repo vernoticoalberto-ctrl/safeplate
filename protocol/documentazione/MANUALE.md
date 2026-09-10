@@ -129,3 +129,21 @@ Una dichiarazione firmata e hashata. Non è un parere legale. Sposta la responsa
 **Come carico questo manuale nel database UE?**
 
 Scarica il file unico Python dalla pagina Manuale (safeplate_protocol.py) insieme ai JSON di catalogo. Oppure esegui il protocollo con --export per ottenere manuale.json.
+
+**Qual è il Main file path per Streamlit Cloud?**
+
+streamlit_app.py. Repository vernoticoalberto-ctrl/safeplate, branch main, Python 3.12. Non usare protocol/main.py.
+
+## Streamlit Community Cloud
+
+Console Python pubblica. Stesso motore, stesso semaforo.
+
+| Campo | Valore |
+| --- | --- |
+| Repository | `vernoticoalberto-ctrl/safeplate` |
+| Branch | `main` |
+| Main file path | `streamlit_app.py` |
+| Python | `3.12` |
+| Subdomain | `safeplate` |
+
+Apri share.streamlit.io, accedi con GitHub, Create app → Yup, I have an app. Non usare protocol/main.py: è il motore a riga di comando. Nessun secret per la demo.

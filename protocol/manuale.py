@@ -311,7 +311,28 @@ MANUALE: dict[str, Any] = {
             "q": "Come carico questo manuale nel database UE?",
             "a": "Scarica il file unico Python dalla pagina Manuale (safeplate_protocol.py) insieme ai JSON di catalogo. Oppure esegui il protocollo con --export per ottenere manuale.json.",
         },
+        {
+            "q": "Qual è il Main file path per Streamlit Cloud?",
+            "a": "streamlit_app.py. Repository vernoticoalberto-ctrl/safeplate, branch main, Python 3.12. Non usare protocol/main.py.",
+        },
     ],
+    "cloud": {
+        "titolo": "Streamlit Community Cloud",
+        "sottotitolo": "Console Python pubblica. Stesso motore, stesso semaforo.",
+        "nota": (
+            "Apri share.streamlit.io, accedi con GitHub, Create app → Yup, I have an app. "
+            "Non usare protocol/main.py: è il motore a riga di comando. Nessun secret per la demo."
+        ),
+        "url_github": "https://github.com/vernoticoalberto-ctrl/safeplate",
+        "url_share": "https://share.streamlit.io",
+        "campi": [
+            {"campo": "Repository", "valore": "vernoticoalberto-ctrl/safeplate"},
+            {"campo": "Branch", "valore": "main"},
+            {"campo": "Main file path", "valore": "streamlit_app.py"},
+            {"campo": "Python", "valore": "3.12"},
+            {"campo": "Subdomain", "valore": "safeplate"},
+        ],
+    },
     "pacchetto": {
         "file_python": "safeplate_protocol.py",
         "file_json": "manuale.json",
@@ -351,6 +372,14 @@ MANUALE: dict[str, Any] = {
             {
                 "file": "console · protocollo / home",
                 "modifica": "Link al manuale di utilizzo.",
+            },
+            {
+                "file": "streamlit_app.py",
+                "modifica": "Entrypoint Streamlit Community Cloud: menu filtrato, totem, filiera, manuale.",
+            },
+            {
+                "file": "requirements.txt · .streamlit/config.toml",
+                "modifica": "Dipendenza streamlit>=1.36.0 e tema carta/sage. Main file path: streamlit_app.py.",
             },
         ],
     },
@@ -402,6 +431,12 @@ def to_markdown(payload: dict[str, Any] | None = None) -> str:
         lines.append("")
         lines.append(item["a"])
         lines.append("")
+    cloud = m.get("cloud")
+    if cloud:
+        lines += [f"## {cloud['titolo']}", "", cloud["sottotitolo"], "", "| Campo | Valore |", "| --- | --- |"]
+        for row in cloud["campi"]:
+            lines.append(f"| {row['campo']} | `{row['valore']}` |")
+        lines += ["", cloud["nota"], ""]
     return "\n".join(lines).rstrip() + "\n"
 
 
