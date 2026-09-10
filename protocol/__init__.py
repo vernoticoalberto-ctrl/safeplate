@@ -1,0 +1,1 @@
+"""Official SafePlate protocol engine."""
