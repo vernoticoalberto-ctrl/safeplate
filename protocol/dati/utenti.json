@@ -1,0 +1,101 @@
+[
+  {
+    "id": "SP-DEMO-CELIA",
+    "etichetta": "Demo · Celiachia",
+    "allergeni": ["glutine"],
+    "gravidanza": false,
+    "diabete": false,
+    "ipertensione": false,
+    "limite_zucchero_g": null,
+    "limite_sodio_mg": null,
+    "note": "Identità dimostrativa. Non è un dato sanitario reale."
+  },
+  {
+    "id": "SP-DEMO-LATTE",
+    "etichetta": "Demo · Allergia al latte",
+    "allergeni": ["latte"],
+    "gravidanza": false,
+    "diabete": false,
+    "ipertensione": false,
+    "limite_zucchero_g": null,
+    "limite_sodio_mg": null,
+    "note": "Identità dimostrativa. Non è un dato sanitario reale."
+  },
+  {
+    "id": "SP-DEMO-MARE",
+    "etichetta": "Demo · Crostacei, molluschi, pesce",
+    "allergeni": ["crostacei", "molluschi", "pesce"],
+    "gravidanza": false,
+    "diabete": false,
+    "ipertensione": false,
+    "limite_zucchero_g": null,
+    "limite_sodio_mg": null,
+    "note": "Identità dimostrativa. Non è un dato sanitario reale."
+  },
+  {
+    "id": "SP-DEMO-GUSCIO",
+    "etichetta": "Demo · Frutta a guscio e arachidi",
+    "allergeni": ["frutta_guscio", "arachidi"],
+    "gravidanza": false,
+    "diabete": false,
+    "ipertensione": false,
+    "limite_zucchero_g": null,
+    "limite_sodio_mg": null,
+    "note": "Identità dimostrativa. Non è un dato sanitario reale."
+  },
+  {
+    "id": "SP-DEMO-UOVA",
+    "etichetta": "Demo · Uova",
+    "allergeni": ["uova"],
+    "gravidanza": false,
+    "diabete": false,
+    "ipertensione": false,
+    "limite_zucchero_g": null,
+    "limite_sodio_mg": null,
+    "note": "Identità dimostrativa. Non è un dato sanitario reale."
+  },
+  {
+    "id": "SP-DEMO-GRAVID",
+    "etichetta": "Demo · Gravidanza (SafePlate Pregnancy)",
+    "allergeni": [],
+    "gravidanza": true,
+    "diabete": false,
+    "ipertensione": false,
+    "limite_zucchero_g": null,
+    "limite_sodio_mg": null,
+    "note": "Identità dimostrativa. Gestisce listeriosi e toxoplasmosi."
+  },
+  {
+    "id": "SP-DEMO-DIAB",
+    "etichetta": "Demo · Diabete (limite 8 g zuccheri)",
+    "allergeni": [],
+    "gravidanza": false,
+    "diabete": true,
+    "ipertensione": false,
+    "limite_zucchero_g": 8,
+    "limite_sodio_mg": null,
+    "note": "Identità dimostrativa. Monitoraggio zuccheri da scheda tecnica."
+  },
+  {
+    "id": "SP-DEMO-IPER",
+    "etichetta": "Demo · Ipertensione (limite 400 mg sodio)",
+    "allergeni": [],
+    "gravidanza": false,
+    "diabete": false,
+    "ipertensione": true,
+    "limite_zucchero_g": null,
+    "limite_sodio_mg": 400,
+    "note": "Identità dimostrativa. Monitoraggio sodio da scheda tecnica."
+  },
+  {
+    "id": "SP-DEMO-MULTI",
+    "etichetta": "Demo · Glutine, latte, uova",
+    "allergeni": ["glutine", "latte", "uova"],
+    "gravidanza": false,
+    "diabete": false,
+    "ipertensione": false,
+    "limite_zucchero_g": null,
+    "limite_sodio_mg": null,
+    "note": "Identità dimostrativa. Profilo multi-allergenico."
+  }
+]
