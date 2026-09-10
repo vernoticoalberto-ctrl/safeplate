@@ -1,0 +1,92 @@
+[
+  {
+    "id": "rst-osteria-borgo",
+    "nome": "Osteria del Borgo",
+    "tipo": "trattoria",
+    "citta": "Roma",
+    "paese": "Italia",
+    "indirizzo": "Vicolo del Cedro 14, Trastevere",
+    "certificato": true,
+    "hash_certificazione": "sp-cert-osteria-borgo-2026",
+    "immagine": "/images/trattoria.jpg",
+    "vettori": {
+      "farina_volatile": true,
+      "olio_frittura_condiviso": true,
+      "allergeni_olio": ["pesce", "molluschi", "glutine"],
+      "superfici_condivise": true,
+      "allergeni_superfici": ["glutine", "latte", "uova"]
+    }
+  },
+  {
+    "id": "rst-mcsafe-termini",
+    "nome": "McSafe Roma Termini",
+    "tipo": "kiosk",
+    "citta": "Roma",
+    "paese": "Italia",
+    "indirizzo": "Stazione Termini, totem 04",
+    "certificato": true,
+    "hash_certificazione": "sp-cert-mcsafe-termini-2026",
+    "immagine": "/images/pollo.jpg",
+    "vettori": {
+      "farina_volatile": false,
+      "olio_frittura_condiviso": true,
+      "allergeni_olio": ["glutine", "latte"],
+      "superfici_condivise": true,
+      "allergeni_superfici": ["glutine", "latte", "sesamo"]
+    }
+  },
+  {
+    "id": "rst-skyline",
+    "nome": "SkyLine Catering · Volo AZ 410",
+    "tipo": "airline",
+    "citta": "Fiumicino",
+    "paese": "Italia",
+    "indirizzo": "Hub catering, FCO T3",
+    "certificato": true,
+    "hash_certificazione": "sp-cert-skyline-2026",
+    "immagine": "/images/quinoa.jpg",
+    "vettori": {
+      "farina_volatile": false,
+      "olio_frittura_condiviso": false,
+      "allergeni_olio": [],
+      "superfici_condivise": false,
+      "allergeni_superfici": []
+    }
+  },
+  {
+    "id": "rst-marenostrum",
+    "nome": "MareNostrum · Cucina di bordo",
+    "tipo": "cruise",
+    "citta": "Genova",
+    "paese": "Italia",
+    "indirizzo": "Molo Ponte dei Mille",
+    "certificato": true,
+    "hash_certificazione": "sp-cert-marenostrum-2026",
+    "immagine": "/images/calamari.jpg",
+    "vettori": {
+      "farina_volatile": true,
+      "olio_frittura_condiviso": true,
+      "allergeni_olio": ["crostacei", "molluschi", "pesce", "glutine"],
+      "superfici_condivise": true,
+      "allergeni_superfici": ["glutine", "latte", "crostacei", "molluschi"]
+    }
+  },
+  {
+    "id": "rst-market-scan",
+    "nome": "Mercato Verde · Corsia 7",
+    "tipo": "supermarket",
+    "citta": "Milano",
+    "paese": "Italia",
+    "indirizzo": "Via della Conciliazione 2",
+    "certificato": true,
+    "hash_certificazione": "sp-cert-market-2026",
+    "immagine": "/images/grano.jpg",
+    "vettori": {
+      "farina_volatile": false,
+      "olio_frittura_condiviso": false,
+      "allergeni_olio": [],
+      "superfici_condivise": false,
+      "allergeni_superfici": []
+    }
+  }
+]
